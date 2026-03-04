@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-bg: #FAFAFA;
+  --color-bg-fill: #FFFFFF;
+  --color-bg-fill-brand: #EF6363;
+  --color-bg-fill-hover: #EFEFEF;
+  --color-bg-fill-selected: #CCCCCC;
+  --color-bg-fill-disabled: #F2F2F2;
+  --color-bg-transparent: #FFFFFF;
+  --color-text: #303030;
+  --color-text-secondary: #616161;
+  --color-icon: #303030;
+  --color-border: #E3E3E3;
+}
+
+body {
+  color: var(--color-text);
+  background: var(--color-bg);
+}

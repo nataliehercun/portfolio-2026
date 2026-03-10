@@ -3,6 +3,7 @@
 import { useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Project, ProjectSection } from "@/data/projects";
+import ImageSlideshow from "./ImageSlideshow";
 
 interface ProjectModalProps {
   project: Project | null;
@@ -69,7 +70,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   relative w-full bg-bg-fill border border-border shadow-lg
                   rounded-none sm:rounded-xl
                   min-h-screen sm:min-h-0
-                  max-w-none sm:max-w-[75vw] sm:max-w-[720px] lg:max-w-[800px]
+                  max-w-none sm:max-w-[720px] lg:max-w-[1000px]
                 "
               >
                 {/* Close button */}
@@ -116,12 +117,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     {project.description}
                   </p>
 
-                  {/* Image slideshow placeholder */}
-                  <div className="mt-6 w-full aspect-video rounded-lg bg-bg-fill-hover flex items-center justify-center">
-                    <span className="text-body-sm text-text-secondary">
-                      Image slideshow
-                    </span>
-                  </div>
+                  {/* Image slideshow */}
+                  {project.images.length > 0 && (
+                    <div className="mt-6">
+                      <ImageSlideshow images={project.images} />
+                    </div>
+                  )}
 
                   {/* Detail sections */}
                   {project.sections.length > 0 && (

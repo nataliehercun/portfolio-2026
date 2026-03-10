@@ -82,7 +82,7 @@ export const projects: Project[] = [
     role: "Product Designer",
     year: "2024",
     company: "Shopify",
-    images: ["/images/project-2-a.jpg", "/images/project-2-b.jpg"],
+    images: ["/images/project-2-a.mov", "/images/project-2-b.png", "/images/project-2-c.png"],
     sections: [
       {
         title: "Challenge",

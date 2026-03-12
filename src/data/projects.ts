@@ -135,7 +135,16 @@ export const projects: Project[] = [
     role: "Product Designer",
     year: "2023",
     company: "Shopify",
-    images: ["/images/project-3-a.jpg", "/images/project-3-b.jpg"],
+    images: [
+      "/images/automations/automations-quick-visual.png",
+      "/images/automations/automations-main.mp4",
+      "/images/automations/automations-marketing-home.png",
+      "/images/automations/automations-template-picker.png",
+      "/images/automations/automations-flow.png",
+      "/images/automations/automations-email-card.png",
+      "/images/automations/automations-editor.png",
+      "/images/automations/automations-report.png",
+    ],
     sections: [
       {
         title: "Challenge",
@@ -178,7 +187,10 @@ export const projects: Project[] = [
     role: "Product Designer",
     year: "2023",
     company: "Shopify",
-    images: ["/images/project-4-a.jpg", "/images/project-4-b.jpg"],
+    images: [
+      "/images/payments/payments-comms.png",
+      "/images/payments/payments-settings.png",
+    ],
     sections: [
       {
         title: "Challenge",

@@ -23,13 +23,18 @@ export const projects: Project[] = [
     title: "Shopify Email",
     icon: "◆",
     description:
-      "A comprehensive brand identity system including logo, typography, color palette, and guidelines. The project explored the intersection of minimalism and sustainability.",
+      "Designed, launched and evolved a commerce first email marketing platform that helped merchants engage with customers and grow sales.",
     details:
       "A comprehensive brand identity system including logo, typography, color palette, and guidelines. The project explored the intersection of minimalism and sustainability.",
-    role: "Product Designer",
-    year: "2024",
+    role: "First designer on 0-1 MVP → Designer Lead",
+    year: "2019-2023",
     company: "Shopify",
-    images: ["/images/project-1-a.jpg", "/images/project-1-b.jpg"],
+    images: [
+      "/images/Shopify Email/template-library.png",
+      "/images/Shopify Email/Editor.png",
+      "/images/Shopify Email/editor-add-section.png",
+      "/images/Shopify Email/editor-edit-section.png",
+    ],
     sections: [
       {
         title: "Challenge",

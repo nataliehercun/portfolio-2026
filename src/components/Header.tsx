@@ -16,7 +16,7 @@ export default function Header() {
         />
         <div className="flex flex-col">
           <h1 className="text-heading">Natalie Hercun</h1>
-          <p className="text-body-sm text-text-secondary">Staff Designer</p>
+          <p className="text-body-sm text-text-secondary">Product Designer</p>
         </div>
       </div>
     </motion.header>

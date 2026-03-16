@@ -20,10 +20,7 @@ export default function IntroText() {
       </p>
       <p>
         I&apos;m currently spending some time with family &amp; exploring new
-        creative opportunities. Finding joy in designing personal &amp; freelance
-        projects that have allowed me to nourish my creative practice, flex my
-        problem solving skills, learn new tools &amp; have lots of fun
-        collaborating with inspiring entrepreneurs.
+        creative opportunities.
       </p>
     </motion.section>
   );

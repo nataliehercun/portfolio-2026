@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import IntroText from "@/components/IntroText";
 import ProjectList from "@/components/ProjectList";
+import ContactButtons from "@/components/ContactButtons";
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
         <Header />
         <IntroText />
         <ProjectList />
+        <ContactButtons />
       </div>
     </main>
   );

@@ -150,7 +150,7 @@ function MetaItem({ label, value }: { label: string; value: string }) {
   );
 }
 
-function ContentBlock({ block, index }: { block: SectionContent; index: number }) {
+function ContentBlock({ block }: { block: SectionContent }) {
   if (block.type === "text") {
     return (
       <p className="mt-2 text-body-sm text-text-secondary">{block.value}</p>
@@ -173,7 +173,7 @@ function SectionBlock({ section }: { section: ProjectSection }) {
       <h3 className="text-heading">{section.title}</h3>
       {section.content ? (
         section.content.map((block, i) => (
-          <ContentBlock key={i} block={block} index={i} />
+          <ContentBlock key={i} block={block} />
         ))
       ) : (
         <>

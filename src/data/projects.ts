@@ -19,6 +19,8 @@ export interface Project {
   year: string;
   company: string;
   images: string[];
+  slideshowVideoBg?: string;
+  slideshowVideoScale?: number;
   sections: ProjectSection[];
 }
 
@@ -84,7 +86,9 @@ export const projects: Project[] = [
     role: "Design Lead and project champion",
     year: "2023",
     company: "Shopify",
-    images: ["/images/Email AI/project-2-a.mov", "/images/Email AI/project-2-b.png", "/images/Email AI/project-2-c.png"],
+    slideshowVideoBg: "#EEA380",
+    slideshowVideoScale: 0.8,
+    images: ["/images/Email AI/PoMo reccording.mov", "/images/Email AI/ai-subject.png", "/images/Email AI/ai-text.png"],
     sections: [
       {
         title: "Challenge",
@@ -127,14 +131,13 @@ export const projects: Project[] = [
     year: "2020-2021",
     company: "Shopify",
     images: [
-      "/images/automations/automations-quick-visual.png",
       "/images/automations/automations-main.mp4",
-      "/images/automations/automations-marketing-home.png",
-      "/images/automations/automations-template-picker.png",
-      "/images/automations/automations-flow.png",
-      "/images/automations/automations-email-card.png",
-      "/images/automations/automations-editor.png",
-      "/images/automations/automations-report.png",
+      "/images/Automations/automations-new/automations-home.png",
+      "/images/Automations/automations-new/automations-template.png",
+      "/images/Automations/automations-new/automations-flow.png",
+      "/images/Automations/automations-new/automations-email.png",
+      "/images/Automations/automations-new/automations-editor.png",
+      "/images/Automations/automations-new/automatioms-report.png",
     ],
     sections: [
       {

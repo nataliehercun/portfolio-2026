@@ -120,7 +120,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   {/* Image slideshow */}
                   {project.images.length > 0 && (
                     <div className="mt-6">
-                      <ImageSlideshow images={project.images} />
+                      <ImageSlideshow
+                        images={project.images}
+                        videoBgColor={project.slideshowVideoBg}
+                        videoScale={project.slideshowVideoScale}
+                      />
                     </div>
                   )}
 

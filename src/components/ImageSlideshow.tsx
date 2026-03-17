@@ -12,9 +12,11 @@ function isVideo(src: string) {
 
 interface ImageSlideshowProps {
   images: string[];
+  videoBgColor?: string;
+  videoScale?: number;
 }
 
-export default function ImageSlideshow({ images }: ImageSlideshowProps) {
+export default function ImageSlideshow({ images, videoBgColor, videoScale }: ImageSlideshowProps) {
   const [current, setCurrent] = useState(0);
 
   if (images.length === 0) return null;
@@ -24,7 +26,7 @@ export default function ImageSlideshow({ images }: ImageSlideshowProps) {
 
   return (
     <div className="relative w-full aspect-[16/10] bg-bg-fill-hover rounded-lg overflow-hidden border border-border shadow-sm">
-      <AnimatePresence mode="wait">
+      <AnimatePresence>
         <motion.div
           key={current}
           initial={{ opacity: 0 }}
@@ -34,14 +36,30 @@ export default function ImageSlideshow({ images }: ImageSlideshowProps) {
           className="absolute inset-0"
         >
           {isVideo(images[current]) ? (
-            <video
-              src={images[current]}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-contain"
-            />
+            videoBgColor && videoScale ? (
+              <div
+                className="absolute inset-0 flex items-center justify-center"
+                style={{ backgroundColor: videoBgColor }}
+              >
+                <video
+                  src={images[current]}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  style={{ width: `${videoScale * 100}%`, objectFit: 'contain', borderRadius: '4px' }}
+                />
+              </div>
+            ) : (
+              <video
+                src={images[current]}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+            )
           ) : (
             <Image
               src={images[current]}

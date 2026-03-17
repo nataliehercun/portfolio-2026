@@ -2,7 +2,7 @@
 
 import { useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Project, ProjectSection } from "@/data/projects";
+import { Project, ProjectSection, SectionContent } from "@/data/projects";
 import ImageSlideshow from "./ImageSlideshow";
 
 interface ProjectModalProps {
@@ -150,21 +150,46 @@ function MetaItem({ label, value }: { label: string; value: string }) {
   );
 }
 
+function ContentBlock({ block, index }: { block: SectionContent; index: number }) {
+  if (block.type === "text") {
+    return (
+      <p className="mt-2 text-body-sm text-text-secondary">{block.value}</p>
+    );
+  }
+  return (
+    <ul className="mt-2 flex flex-col gap-1 list-disc pl-4">
+      {block.value.map((bullet, i) => (
+        <li key={i} className="text-body-sm text-text-secondary">
+          {bullet}
+        </li>
+      ))}
+    </ul>
+  );
+}
+
 function SectionBlock({ section }: { section: ProjectSection }) {
   return (
     <div>
       <h3 className="text-heading">{section.title}</h3>
-      {section.intro && (
-        <p className="mt-2 text-body-sm text-text-secondary">{section.intro}</p>
-      )}
-      {section.bullets.length > 0 && (
-        <ul className="mt-2 flex flex-col gap-1 list-disc pl-4">
-          {section.bullets.map((bullet, i) => (
-            <li key={i} className="text-body-sm text-text-secondary">
-              {bullet}
-            </li>
-          ))}
-        </ul>
+      {section.content ? (
+        section.content.map((block, i) => (
+          <ContentBlock key={i} block={block} index={i} />
+        ))
+      ) : (
+        <>
+          {section.intro && (
+            <p className="mt-2 text-body-sm text-text-secondary">{section.intro}</p>
+          )}
+          {section.bullets && section.bullets.length > 0 && (
+            <ul className="mt-2 flex flex-col gap-1 list-disc pl-4">
+              {section.bullets.map((bullet, i) => (
+                <li key={i} className="text-body-sm text-text-secondary">
+                  {bullet}
+                </li>
+              ))}
+            </ul>
+          )}
+        </>
       )}
     </div>
   );

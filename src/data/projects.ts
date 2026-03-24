@@ -36,12 +36,7 @@ export const projects: Project[] = [
     role: "First designer on 0-1 MVP → Designer Lead",
     year: "2019-2023",
     company: "Shopify",
-    images: [
-      "/images/Shopify Email/template-library.png",
-      "/images/Shopify Email/Editor.png",
-      "/images/Shopify Email/editor-add-section.png",
-      "/images/Shopify Email/editor-edit-section.png",
-    ],
+    images: ["/images/Shopify Email/shopify-email-1.mov"],
     sections: [
       {
         title: "Challenge",
@@ -88,7 +83,7 @@ export const projects: Project[] = [
     company: "Shopify",
     slideshowVideoBg: "#EEA380",
     slideshowVideoScale: 0.8,
-    images: ["/images/Email AI/PoMo reccording.mov", "/images/Email AI/ai-subject.png", "/images/Email AI/ai-text.png"],
+    images: ["/images/Email AI/email-ai-1.mov", "/images/Email AI/email-ai-2.mov"],
     sections: [
       {
         title: "Challenge",
@@ -131,13 +126,12 @@ export const projects: Project[] = [
     year: "2020-2021",
     company: "Shopify",
     images: [
-      "/images/automations/automations-main.mp4",
-      "/images/Automations/automations-new/automations-home.png",
-      "/images/Automations/automations-new/automations-template.png",
-      "/images/Automations/automations-new/automations-flow.png",
-      "/images/Automations/automations-new/automations-email.png",
-      "/images/Automations/automations-new/automations-editor.png",
-      "/images/Automations/automations-new/automatioms-report.png",
+      "/images/automations/automations-new/automations-home.png",
+      "/images/automations/automations-new/automations-template.png",
+      "/images/automations/automations-new/automations-flow.png",
+      "/images/automations/automations-new/automations-email.png",
+      "/images/automations/automations-new/automations-editor.png",
+      "/images/automations/automations-new/automatioms-report.png",
     ],
     sections: [
       {

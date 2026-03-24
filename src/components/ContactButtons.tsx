@@ -20,7 +20,7 @@ export default function ContactButtons() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.85, ease: "linear" }}
-      className="flex gap-[10px] border-t border-border pt-5"
+      className="flex gap-[10px]"
       aria-label="Contact options"
     >
       <motion.a

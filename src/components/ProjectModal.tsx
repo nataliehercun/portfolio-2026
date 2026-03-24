@@ -102,20 +102,21 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                 </button>
 
                 <div className="p-6 sm:p-8 lg:p-10">
-                  {/* Title */}
-                  <h2 className="text-heading-xl pr-10">{project.title}</h2>
+                  <div className="max-w-2xl">
+                    {/* Title */}
+                    <h2 className="text-heading-xl pr-10">{project.title}</h2>
 
-                  {/* Metadata */}
-                  <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3">
-                    <MetaItem label="Role" value={project.role} />
-                    <MetaItem label="Year" value={project.year} />
-                    <MetaItem label="Company" value={project.company} />
+                    {/* Description */}
+                    <p className="mt-3 text-body-big text-text-secondary leading-relaxed">
+                      {project.description}
+                    </p>
+
+                    {/* Metadata */}
+                    <div className="flex flex-col gap-1 mt-5 text-body-sm text-text-secondary">
+                      <span>Role: {project.role}</span>
+                      <span>{project.company} {project.year}</span>
+                    </div>
                   </div>
-
-                  {/* Description */}
-                  <p className="mt-5 text-body-sm text-text-secondary leading-relaxed">
-                    {project.description}
-                  </p>
 
                   {/* Image slideshow */}
                   {project.images.length > 0 && (
@@ -130,7 +131,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
                   {/* Detail sections */}
                   {project.sections.length > 0 && (
-                    <div className="mt-8 flex flex-col gap-4">
+                    <div className="mt-8 flex flex-col gap-6 max-w-2xl">
                       {project.sections.map((section) => (
                         <SectionBlock key={section.title} section={section} />
                       ))}
@@ -157,11 +158,11 @@ function MetaItem({ label, value }: { label: string; value: string }) {
 function ContentBlock({ block }: { block: SectionContent }) {
   if (block.type === "text") {
     return (
-      <p className="mt-2 text-body-sm text-text-secondary">{block.value}</p>
+      <p className="mt-3 text-body-sm text-text-secondary">{block.value}</p>
     );
   }
   return (
-    <ul className="mt-2 flex flex-col gap-1 list-disc pl-4">
+    <ul className="mt-3 flex flex-col gap-1 list-disc pl-4">
       {block.value.map((bullet, i) => (
         <li key={i} className="text-body-sm text-text-secondary">
           {bullet}
@@ -182,10 +183,10 @@ function SectionBlock({ section }: { section: ProjectSection }) {
       ) : (
         <>
           {section.intro && (
-            <p className="mt-2 text-body-sm text-text-secondary">{section.intro}</p>
+            <p className="mt-3 text-body-sm text-text-secondary">{section.intro}</p>
           )}
           {section.bullets && section.bullets.length > 0 && (
-            <ul className="mt-2 flex flex-col gap-1 list-disc pl-4">
+            <ul className="mt-3 flex flex-col gap-1 list-disc pl-4">
               {section.bullets.map((bullet, i) => (
                 <li key={i} className="text-body-sm text-text-secondary">
                   {bullet}

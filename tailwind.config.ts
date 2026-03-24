@@ -32,11 +32,11 @@ const config: Config = {
       },
     },
     fontSize: {
-      "heading-xl": ["16px", { lineHeight: "24px", fontWeight: "600" }],
-      heading: ["12px", { lineHeight: "16px", fontWeight: "600" }],
-      "body-big": ["14px", { lineHeight: "18px", fontWeight: "500" }],
-      "body-sm": ["12px", { lineHeight: "18px", fontWeight: "400" }],
-      caption: ["8px", { lineHeight: "10px", fontWeight: "400" }],
+      "heading-xl": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+      heading: ["14px", { lineHeight: "20px", fontWeight: "600" }],
+      "body-big": ["16px", { lineHeight: "24px", fontWeight: "500" }],
+      "body-sm": ["14px", { lineHeight: "22px", fontWeight: "400" }],
+      caption: ["10px", { lineHeight: "14px", fontWeight: "400" }],
     },
     fontFamily: {
       sans: ["var(--font-inter)", "system-ui", "sans-serif"],

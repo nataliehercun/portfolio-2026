@@ -147,14 +147,6 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   );
 }
 
-function MetaItem({ label, value }: { label: string; value: string }) {
-  return (
-    <span className="text-body-sm text-text-secondary">
-      <span className="text-text">{label}</span> — {value}
-    </span>
-  );
-}
-
 function ContentBlock({ block }: { block: SectionContent }) {
   if (block.type === "text") {
     return (

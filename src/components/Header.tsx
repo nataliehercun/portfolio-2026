@@ -9,16 +9,7 @@ export default function Header() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, ease: "linear" }}
     >
-      <div className="flex items-center gap-2">
-        <div
-          className="size-[30px] shrink-0 rounded-full bg-bg-fill-brand"
-          aria-hidden
-        />
-        <div className="flex flex-col">
-          <h1 className="text-heading">Natalie Hercun</h1>
-          <p className="text-body-sm text-text-secondary">Product Designer</p>
-        </div>
-      </div>
+      <h1 className="text-heading-xl text-bg-fill-brand">Natalie Hercun</h1>
     </motion.header>
   );
 }

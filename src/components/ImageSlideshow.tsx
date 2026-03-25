@@ -74,13 +74,15 @@ export default function ImageSlideshow({ images, videoBgColor, videoScale }: Ima
 
       {images.length > 1 && (
         <>
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5">
+          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
             {images.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
-                className={`w-1.5 h-1.5 rounded-full transition-colors ${
-                  i === current ? "bg-white" : "bg-white/40"
+                className={`rounded-full transition-all duration-200 ${
+                  i === current
+                    ? "w-6 h-2 bg-black/70"
+                    : "w-2 h-2 bg-black/20 hover:bg-black/35"
                 }`}
                 aria-label={`Go to slide ${i + 1}`}
               />
@@ -89,20 +91,20 @@ export default function ImageSlideshow({ images, videoBgColor, videoScale }: Ima
 
           <button
             onClick={prev}
-            className="absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/30 backdrop-blur-sm text-white hover:bg-black/50 transition-colors flex items-center justify-center"
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/40 text-white hover:bg-black/55 transition-colors duration-150 flex items-center justify-center"
             aria-label="Previous image"
           >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M8.5 3L4.5 7L8.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M12 4.5L6.5 10L12 15.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           <button
             onClick={next}
-            className="absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full bg-black/30 backdrop-blur-sm text-white hover:bg-black/50 transition-colors flex items-center justify-center"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/40 text-white hover:bg-black/55 transition-colors duration-150 flex items-center justify-center"
             aria-label="Next image"
           >
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M5.5 3L9.5 7L5.5 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M8 4.5L13.5 10L8 15.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </>

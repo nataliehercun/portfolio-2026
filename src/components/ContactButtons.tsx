@@ -3,9 +3,9 @@
 import { motion } from "framer-motion";
 
 const buttonClass = [
-  "inline-flex items-center justify-center rounded-[4px] bg-bg-fill-hover px-2 py-1 text-body-sm text-text",
+  "inline-flex items-center justify-center rounded-[4px] border border-bg-fill-brand bg-bg px-2 py-1 text-body-sm text-bg-fill-brand",
   "transition-colors duration-150",
-  "hover:bg-bg-fill-selected",
+  "hover:bg-bg",
 ].join(" ");
 
 const bounceTransition = {

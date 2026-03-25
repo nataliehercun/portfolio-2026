@@ -126,6 +126,7 @@ export const projects: Project[] = [
     year: "2020-2021",
     company: "Shopify",
     images: [
+      "/images/Automations/automations-abstract.png",
       "/images/automations/automations-new/automations-home.png",
       "/images/automations/automations-new/automations-template.png",
       "/images/automations/automations-new/automations-flow.png",

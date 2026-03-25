@@ -74,37 +74,22 @@ export default function ImageSlideshow({ images, videoBgColor, videoScale }: Ima
 
       {images.length > 1 && (
         <>
-          <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-2">
-            {images.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={`rounded-full transition-all duration-200 ${
-                  i === current
-                    ? "w-6 h-2 bg-black/70"
-                    : "w-2 h-2 bg-black/20 hover:bg-black/35"
-                }`}
-                aria-label={`Go to slide ${i + 1}`}
-              />
-            ))}
-          </div>
-
           <button
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/40 text-white hover:bg-black/55 transition-colors duration-150 flex items-center justify-center"
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-[30px] h-[30px] rounded-full bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.65)] transition-colors duration-150 flex items-center justify-center"
             aria-label="Previous image"
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M12 4.5L6.5 10L12 15.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
+              <path d="M5 1L1 5L5 9" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
           <button
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-black/40 text-white hover:bg-black/55 transition-colors duration-150 flex items-center justify-center"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-[30px] h-[30px] rounded-full bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.65)] transition-colors duration-150 flex items-center justify-center"
             aria-label="Next image"
           >
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M8 4.5L13.5 10L8 15.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
+              <path d="M1 1L5 5L1 9" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
         </>

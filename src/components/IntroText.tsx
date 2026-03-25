@@ -12,7 +12,7 @@ export default function IntroText() {
       className="space-y-[18px] text-body-sm text-text-secondary"
     >
       <p>I&apos;m a product designer based in Montreal, CA.</p>
-      <p>I&apos;m good at helping teams frame ambiguous problems, imagine novel solutions, create high quality products, and most importantly—to have fun through it all.</p>
+      <p>I like helping teams frame ambiguous problems, imagine novel solutions, create high quality products, and most importantly—to have fun through it all.</p>
       <p>
         Previously, I worked at{" "}
         <a
@@ -41,7 +41,7 @@ export default function IntroText() {
         >
           Payments
         </a>
-        .
+        . I contributed to bringing commerce tools to market that millions of entrepreneurs love using..
       </p>
       <p>
         I&apos;m currently exploring new ways of working, fulled by curiosity & a desire to shape the world with intention. Learn more{" "}

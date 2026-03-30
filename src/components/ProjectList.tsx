@@ -14,7 +14,7 @@ export default function ProjectList() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.65, ease: "linear" }}
-      className="flex flex-col gap-[3px]"
+      className="flex flex-col gap-[8px]"
     >
       <h2 className="text-heading">Selected work</h2>
       <div className="flex flex-col">

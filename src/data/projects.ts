@@ -30,7 +30,7 @@ export const projects: Project[] = [
     title: "Shopify Email",
     icon: "◆",
     description:
-      "Designed, launched and evolved a commerce first email marketing platform that helped merchants engage with customers and grow sales.",
+      "Designed and scaled a commerce first email marketing platform.",
     details:
       "A comprehensive brand identity system including logo, typography, color palette, and guidelines. The project explored the intersection of minimalism and sustainability.",
     role: "First designer on 0-1 MVP → Designer Lead",
@@ -75,7 +75,7 @@ export const projects: Project[] = [
     title: "AI generated content for email",
     icon: "▲",
     description:
-      "Designed and launched AI generated subject lines & text for email marketing, contributing to the first iteration of AI content generation at Shopify.",
+      "Designed and launched AI generated text for email marketing, contributing to the first iteration of AI content generation at Shopify.",
     details:
       "Editorial design spanning 120 pages, balancing expressive typography with restrained white space. Each spread was designed to guide the reader through longform narratives.",
     role: "Design Lead and project champion",
@@ -119,14 +119,13 @@ export const projects: Project[] = [
     title: "Marketing automations",
     icon: "●",
     description:
-      "Designed, launched and evolved a no-code automated email marketing platform that helped merchants enge with customers and grow sales.",
+      "Designed, launched and evolved a no-code automated email marketing platform.",
     details:
       "End-to-end UI/UX design for a financial analytics platform. The focus was on making complex data feel approachable through clear hierarchy and subtle motion.",
     role: "Senior Product Designer",
     year: "2020-2021",
     company: "Shopify",
     images: [
-      "/images/Automations/automations-abstract.png",
       "/images/automations/automations-new/automations-home.png",
       "/images/automations/automations-new/automations-template.png",
       "/images/automations/automations-new/automations-flow.png",
@@ -139,7 +138,7 @@ export const projects: Project[] = [
         title: "Challenge",
         bullets: [
           "Shopify did not offer customizable marketing email workflows",
-          "The only available marketing automation was an abandoned checkout flow, and editing the emails was clunky and required coding experience",
+          "The only existing marketing automation was tedious to edit",
           "Merchants were paying for 3rd party automated marketing services",
         ],
       },

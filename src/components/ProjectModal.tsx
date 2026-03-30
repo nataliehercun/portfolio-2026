@@ -112,7 +112,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     </p>
 
                     {/* Metadata */}
-                    <div className="flex flex-col gap-1 mt-5 text-body-sm text-text-secondary">
+                    <div className="flex flex-col gap-1 mt-3 text-body-sm text-text-secondary">
                       <span>Role: {project.role}</span>
                       <span>{project.company} {project.year}</span>
                     </div>

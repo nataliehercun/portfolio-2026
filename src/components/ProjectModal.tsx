@@ -121,11 +121,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   {/* Image slideshow */}
                   {project.images.length > 0 && (
                     <div className="mt-6">
-                      <ImageSlideshow
-                        images={project.images}
-                        videoBgColor={project.slideshowVideoBg}
-                        videoScale={project.slideshowVideoScale}
-                      />
+                      <ImageSlideshow images={project.images} />
                     </div>
                   )}
 
@@ -156,9 +152,11 @@ function ContentBlock({ block }: { block: SectionContent }) {
   return (
     <ul className="mt-3 flex flex-col gap-1 list-disc pl-4">
       {block.value.map((bullet, i) => (
-        <li key={i} className="text-body-sm text-text-secondary">
-          {bullet}
-        </li>
+        <li
+          key={i}
+          className="text-body-sm text-text-secondary [&_a]:underline [&_a]:text-text hover:[&_a]:text-text-secondary"
+          dangerouslySetInnerHTML={{ __html: bullet }}
+        />
       ))}
     </ul>
   );
@@ -180,9 +178,11 @@ function SectionBlock({ section }: { section: ProjectSection }) {
           {section.bullets && section.bullets.length > 0 && (
             <ul className="mt-3 flex flex-col gap-1 list-disc pl-4">
               {section.bullets.map((bullet, i) => (
-                <li key={i} className="text-body-sm text-text-secondary">
-                  {bullet}
-                </li>
+                <li
+                  key={i}
+                  className="text-body-sm text-text-secondary [&_a]:underline [&_a]:text-text hover:[&_a]:text-text-secondary"
+                  dangerouslySetInnerHTML={{ __html: bullet }}
+                />
               ))}
             </ul>
           )}

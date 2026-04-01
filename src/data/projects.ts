@@ -19,8 +19,6 @@ export interface Project {
   year: string;
   company: string;
   images: string[];
-  slideshowVideoBg?: string;
-  slideshowVideoScale?: number;
   sections: ProjectSection[];
 }
 
@@ -36,7 +34,7 @@ export const projects: Project[] = [
     role: "First designer on 0-1 MVP → Designer Lead",
     year: "2019-2023",
     company: "Shopify",
-    images: ["/images/Shopify Email/shopify-email-1.mov"],
+    images: ["/images/Shopify Email/shopify-email.mov"],
     sections: [
       {
         title: "Challenge",
@@ -66,6 +64,7 @@ export const projects: Project[] = [
           " As of July 2023, there were 352k active senders across email & automations, generating 73M in GMV.",
           " For all of 2023, those products generated $896M in GMV. We doubled sending from the beginning of the year, where we hit 568k",
           " We drove over $5M in revenue around that time, which was a 54% YOY growth ",
+          'Co-inventor on a <a href="https://patents.google.com/patent/US12106035B2/en?inventor=Natalie+Hercun" target="_blank" rel="noopener noreferrer">granted patent</a> for systems enabling dynamic generation of digital layouts and content experiences at scale.',
         ],
       },
     ],
@@ -81,9 +80,7 @@ export const projects: Project[] = [
     role: "Design Lead and project champion",
     year: "2023",
     company: "Shopify",
-    slideshowVideoBg: "#EEA380",
-    slideshowVideoScale: 0.8,
-    images: ["/images/Email AI/email-ai-1.mov", "/images/Email AI/email-ai-2.mov"],
+    images: ["/images/Email AI/ai-1.mov", "/images/Email AI/ai-2.mov"],
     sections: [
       {
         title: "Challenge",
@@ -106,10 +103,11 @@ export const projects: Project[] = [
         title: "Impact",
         bullets: [
           "Positive impact on open rates",
-          "Developing a shared pattern enabled us to ship improvements and next versions quickly across the platform",
-          "Contributed to the first iterating of AI content generation features at Shopify.",
-          "Our team was called out as a successful collaboration case study.",
+          "Developed a shared pattern that enabled the team to ship improvements and next versions quickly across the platform",
+          'Contributed to the first iteration of <a href="https://www.shopify.com/ca/editions/summer2023?product=shopify-magic-featured" target="_blank" rel="noopener noreferrer">Shopify Magic</a> AI-powered features.',
+          "Our team was called out as a successful internal ollaboration case study.",
           "Laid the foundation for how to think about AI & email, which lead to many new product launched",
+          'Co-inventor on a <a href="https://patents.google.com/patent/US20250148191A1/en?inventor=Natalie+Hercun" target="_blank" rel="noopener noreferrer">published patent application</a> for keyword extraction to generate subject lines.',
         ],
       },
     ],
@@ -173,10 +171,7 @@ export const projects: Project[] = [
     role: "Staff Product Designer",
     year: "2025",
     company: "Shopify",
-    images: [
-      "/images/payments/payments-comms.png",
-      "/images/payments/payments-settings.png",
-    ],
+    images: ["/images/Payments/Payments.mov"],
     sections: [
       {
         title: "Context",

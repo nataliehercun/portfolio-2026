@@ -23,6 +23,7 @@ const config: Config = {
       text: {
         DEFAULT: "var(--color-text)",
         secondary: "var(--color-text-secondary)",
+        tertiary: "var(--color-text-tertiary)",
       },
       icon: {
         DEFAULT: "var(--color-icon)",

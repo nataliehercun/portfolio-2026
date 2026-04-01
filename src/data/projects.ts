@@ -117,7 +117,7 @@ export const projects: Project[] = [
     title: "Marketing automations",
     icon: "●",
     description:
-      "Designed, launched and evolved a no-code automated email marketing platform.",
+      "Designed a no-code automated email marketing platform, helping merchants engage with their customers and grow their sales.",
     details:
       "End-to-end UI/UX design for a financial analytics platform. The focus was on making complex data feel approachable through clear hierarchy and subtle motion.",
     role: "Senior Product Designer",
@@ -165,9 +165,9 @@ export const projects: Project[] = [
     title: "Shopify Payments 1099k tax filling automation",
     icon: "■",
     description:
-      "Designed and delivered an improved 1099-K filing experience for merchants using Shopify Payments by automating tax data collection, improved communication, and timely form delivery.",
+      "Designed an improved 1099-K filing experience by automating tax data collection and improving communication with merchants.",
     details:
-      "Designed and delivered an improved 1099-K filing experience for merchants using Shopify Payments by automating tax data collection, improved communication, and timely form delivery.",
+      "Designed an improved 1099-K filing experience by automating tax data collection and improving communication with merchants",
     role: "Staff Product Designer",
     year: "2025",
     company: "Shopify",

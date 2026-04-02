@@ -17,6 +17,10 @@
   --color-border: #FAF4DE;
 }
 
+html {
+  scrollbar-gutter: stable;
+}
+
 body {
   color: var(--color-text);
   background: var(--color-bg);

@@ -10,14 +10,36 @@ interface ProjectModalProps {
   onClose: () => void;
 }
 
+const easeOut: [number, number, number, number] = [0.36, 0.66, 0, 1];
+
 const overlayVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
+  hidden: {
+    opacity: 0,
+    transition: { duration: 0.2, ease: easeOut },
+  },
+  visible: {
+    opacity: 1,
+    transition: { duration: 0.3, ease: easeOut },
+  },
 };
 
-const modalVariants = {
-  hidden: { opacity: 0 },
-  visible: { opacity: 1 },
+const panelVariants = {
+  hidden: {
+    opacity: 0,
+    y: "100%",
+    transition: {
+      y: { duration: 0.3, ease: easeOut },
+      opacity: { duration: 0.25, ease: easeOut },
+    },
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      y: { duration: 0.55, ease: easeOut },
+      opacity: { duration: 0.3, ease: easeOut },
+    },
+  },
 };
 
 export default function ProjectModal({ project, onClose }: ProjectModalProps) {
@@ -35,36 +57,47 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   useEffect(() => {
     if (project) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
       document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
   }, [project]);
 
+  const unlockScroll = useCallback(() => {
+    if (document.body.style.position !== "fixed") return;
+    const scrollY = parseInt(document.body.style.top || "0", 10) * -1;
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.left = "";
+    document.body.style.right = "";
+    document.body.style.overflow = "";
+    window.scrollTo(0, scrollY);
+  }, []);
+
+  useEffect(() => {
+    return () => unlockScroll();
+  }, [unlockScroll]);
+
   return (
-    <AnimatePresence>
+    <AnimatePresence onExitComplete={unlockScroll}>
       {project && (
-        <motion.div
-          key="modal-overlay"
-          variants={overlayVariants}
-          initial="hidden"
-          animate="visible"
-          exit="hidden"
-          transition={{ duration: 0.3, ease: "easeOut" }}
-          className="fixed inset-0 z-50 bg-[#000000]/25"
-          onClick={onClose}
-        >
-          <div className="fixed inset-0 overflow-y-auto overscroll-contain">
+        <motion.div key="modal" initial="hidden" animate="visible" exit="hidden">
+          <motion.div
+            variants={overlayVariants}
+            className="fixed inset-0 z-50 bg-[#000000]/25"
+            onClick={onClose}
+          />
+
+          <motion.div
+            variants={panelVariants}
+            className="fixed inset-0 z-50 overflow-y-auto overscroll-contain"
+            onClick={onClose}
+          >
             <div className="flex min-h-full items-center justify-center p-4 sm:p-6 md:p-10">
-              <motion.div
-                variants={modalVariants}
-                initial="hidden"
-                animate="visible"
-                exit="hidden"
-                transition={{ duration: 0.3, ease: "easeOut" }}
+              <div
                 onClick={(e) => e.stopPropagation()}
                 className="
                   relative w-full bg-bg-fill border border-border shadow-lg
@@ -134,9 +167,9 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     </div>
                   )}
                 </div>
-              </motion.div>
+              </div>
             </div>
-          </div>
+          </motion.div>
         </motion.div>
       )}
     </AnimatePresence>

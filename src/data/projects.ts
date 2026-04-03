@@ -19,6 +19,8 @@ export interface Project {
   year: string;
   company: string;
   images: string[];
+  /** Hex background behind the modal image/video slideshow (letterboxing). */
+  slideshowBackground?: string;
   sections: ProjectSection[];
 }
 
@@ -35,6 +37,7 @@ export const projects: Project[] = [
     year: "2019-2023",
     company: "Shopify",
     images: ["/images/Shopify Email/shopify-email.mov"],
+    slideshowBackground: "#550D00",
     sections: [
       {
         title: "Challenge",
@@ -81,6 +84,7 @@ export const projects: Project[] = [
     year: "2023",
     company: "Shopify",
     images: ["/images/Email AI/ai-1.mov", "/images/Email AI/ai-2.mov"],
+    slideshowBackground: "#EEA380",
     sections: [
       {
         title: "Challenge",
@@ -123,6 +127,7 @@ export const projects: Project[] = [
     role: "Senior Product Designer",
     year: "2020-2021",
     company: "Shopify",
+    slideshowBackground: "#094F4D",
     images: [
       "/images/automations/automations-new/automations-home.png",
       "/images/automations/automations-new/automations-template.png",
@@ -172,6 +177,7 @@ export const projects: Project[] = [
     year: "2025",
     company: "Shopify",
     images: ["/images/payments/Payments.mov"],
+    slideshowBackground: "#CEEAF5",
     sections: [
       {
         title: "Context",

@@ -12,9 +12,11 @@ function isVideo(src: string) {
 
 interface ImageSlideshowProps {
   images: string[];
+  /** Hex (e.g. #550D00). Falls back to theme fill when omitted. */
+  backgroundColor?: string;
 }
 
-export default function ImageSlideshow({ images }: ImageSlideshowProps) {
+export default function ImageSlideshow({ images, backgroundColor }: ImageSlideshowProps) {
   const [current, setCurrent] = useState(0);
 
   if (images.length === 0) return null;
@@ -23,7 +25,10 @@ export default function ImageSlideshow({ images }: ImageSlideshowProps) {
   const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
 
   return (
-    <div className="relative w-full aspect-[16/10] bg-bg-fill-hover rounded-lg overflow-hidden border border-border shadow-sm">
+    <div
+      className={`relative w-full aspect-[16/10] rounded-lg overflow-hidden border border-border shadow-sm ${backgroundColor ? "" : "bg-bg-fill-hover"}`}
+      style={backgroundColor ? { backgroundColor } : undefined}
+    >
       <AnimatePresence>
         <motion.div
           key={current}

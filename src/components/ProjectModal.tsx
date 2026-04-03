@@ -57,24 +57,12 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
   useEffect(() => {
     if (project) {
-      const scrollY = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
-      document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     }
   }, [project]);
 
   const unlockScroll = useCallback(() => {
-    if (document.body.style.position !== "fixed") return;
-    const scrollY = parseInt(document.body.style.top || "0", 10) * -1;
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.left = "";
-    document.body.style.right = "";
-    document.body.style.overflow = "";
-    window.scrollTo(0, scrollY);
+    document.documentElement.style.overflow = "";
   }, []);
 
   useEffect(() => {
@@ -84,7 +72,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
   return (
     <AnimatePresence onExitComplete={unlockScroll}>
       {project && (
-        <motion.div key="modal" initial="hidden" animate="visible" exit="hidden">
+        <motion.div key="modal" className="fixed z-50" initial="hidden" animate="visible" exit="hidden">
           <motion.div
             variants={overlayVariants}
             className="fixed inset-0 z-50 bg-[#000000]/25"

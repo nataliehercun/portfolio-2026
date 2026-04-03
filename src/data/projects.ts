@@ -62,8 +62,8 @@ export const projects: Project[] = [
         title: "Impact",
         bullets: [
           " As of July 2023, there were 352k active senders across email & automations, generating 73M in GMV.",
-          " For all of 2023, those products generated $896M in GMV. We doubled sending from the beginning of the year, where we hit 568k",
-          " We drove over $5M in revenue around that time, which was a 54% YOY growth ",
+          " For all of 2023, those products generated $896M in GMV. We doubled sending from the beginning of the year, where we hit 568k.",
+          " We drove over $5M in revenue around that time, which was a 54% YOY growth. ",
           'Co-inventor on a <a href="https://patents.google.com/patent/US12106035B2/en?inventor=Natalie+Hercun" target="_blank" rel="noopener noreferrer">granted patent</a> for systems enabling dynamic generation of digital layouts and content experiences at scale.',
         ],
       },
@@ -95,18 +95,18 @@ export const projects: Project[] = [
       {
         title: "Solution",
         bullets: [
-          "Short term: Leverage LLMs to generate email subject lines and body text in order to reduce friction in email creation and improve campaign performance. Tightly partnered with the Shopify Magic team, that was responsible for developing broader Shopify AI patterns and principles. We brought in domain context, and co-creating patterns to insure scalability across the pattern",
+          "Short term: Leverage LLMs to generate email subject lines and body text in order to reduce friction in email creation and improve campaign performance. Tightly partnered with the Shopify Magic team, that was responsible for developing broader Shopify AI patterns and principles. We brought in domain context, and co-creating patterns to insure scalability across the pattern.",
           "Long term: Explore and identify broader ways to use AI in email experience in order to guide project roadmap, and ressources.",
         ],  
       },
       {
         title: "Impact",
         bullets: [
-          "Positive impact on open rates",
+          "Positive impact on open rates.",
           "Developed a shared pattern that enabled the team to ship improvements and next versions quickly across the platform",
           'Contributed to the first iteration of <a href="https://www.shopify.com/ca/editions/summer2023?product=shopify-magic-featured" target="_blank" rel="noopener noreferrer">Shopify Magic</a> AI-powered features.',
           "Our team was called out as a successful internal ollaboration case study.",
-          "Laid the foundation for how to think about AI & email, which lead to many new product launched",
+          "Laid the foundation for how to think about AI & email, which lead to many new product launched.",
           'Co-inventor on a <a href="https://patents.google.com/patent/US20250148191A1/en?inventor=Natalie+Hercun" target="_blank" rel="noopener noreferrer">published patent application</a> for keyword extraction to generate subject lines.',
         ],
       },
@@ -135,9 +135,9 @@ export const projects: Project[] = [
       {
         title: "Challenge",
         bullets: [
-          "Shopify did not offer customizable marketing email workflows",
-          "The only existing marketing automation was tedious to edit",
-          "Merchants were paying for 3rd party automated marketing services",
+          "Shopify did not offer customizable marketing email workflows.",
+          "The only existing marketing automation was tedious to edit.",
+          "Merchants were paying for 3rd party automated marketing services.",
         ],
       },
       {
@@ -171,7 +171,7 @@ export const projects: Project[] = [
     role: "Staff Product Designer",
     year: "2025",
     company: "Shopify",
-    images: ["/images/Payments/Payments.mov"],
+    images: ["/images/payments/Payments.mov"],
     sections: [
       {
         title: "Context",
@@ -196,17 +196,17 @@ export const projects: Project[] = [
           "We designed an automated 1099-K experience focusing on streamlined checks, self-service, and proactive communication.",
         bullets: [
           "Streamlined check services across platforms",
-          "Self-serve remediation flow through the Profile Assessment platform: faster for merchants to input information, and more accurate information storing on the Shopify side",
-          "New 1099-K download pages within the Finance section of admin: easier to find",
-          "Proactive communications (emails, alerts, notifications) to guide merchants on timelines & consequences",
-          "Consolidated reporting across multiple payment processors",
+          "Self-serve remediation flow through the Profile Assessment platform: faster for merchants to input information, and more accurate information storing on the Shopify side.",
+          "New 1099-K download pages within the Finance section of admin: easier to find.",
+          "Proactive communications (emails, alerts, notifications) to guide merchants on timelines & consequences.",
+          "Consolidated reporting across multiple payment processors.",
         ],
       },
       {
         title: "Impact",
         bullets: [
-          "Reduced operational burden and support cost",
-          "Improved compliance readiness, data aggregation, and form delivery timeline (most delivered by January 31 instead of March)",
+          "Reduced operational burden and support cost.",
+          "Improved compliance readiness, data aggregation, and form delivery timeline (most delivered by January 31 instead of March).",
         ],
       },
     ],

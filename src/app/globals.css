@@ -6,7 +6,7 @@
   --color-bg: #FFFCF2;
   --color-bg-fill: #FFFCF2;
   --color-bg-fill-brand: #EA363A;
-  --color-bg-fill-hover: #FAF4DE;
+  --color-bg-fill-hover: #F3E9D3;
   --color-bg-fill-selected: #E9E5D9;
   --color-bg-fill-disabled: #F2F2F2;
   --color-bg-transparent: #FFFFFF;
@@ -14,7 +14,7 @@
   --color-text-secondary: #67514E;
   --color-text-tertiary: #998E8A;
   --color-icon: #412625;
-  --color-border: #FAF4DE;
+  --color-border: #EDE7DA;
 }
 
 html {

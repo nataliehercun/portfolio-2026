@@ -63,7 +63,7 @@ export default function ImageSlideshow({ images, backgroundColor }: ImageSlidesh
         <>
           <button
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-[30px] h-[30px] rounded-full bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.65)] transition-colors duration-150 flex items-center justify-center"
+            className="absolute left-3 top-1/2 -translate-y-1/2 w-[30px] h-[30px] pr-[2px] rounded-full bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.65)] transition-colors duration-150 flex items-center justify-center"
             aria-label="Previous image"
           >
             <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
@@ -72,7 +72,7 @@ export default function ImageSlideshow({ images, backgroundColor }: ImageSlidesh
           </button>
           <button
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-[30px] h-[30px] rounded-full bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.65)] transition-colors duration-150 flex items-center justify-center"
+            className="absolute right-3 top-1/2 -translate-y-1/2 w-[30px] h-[30px] pl-[2px] rounded-full bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.65)] transition-colors duration-150 flex items-center justify-center"
             aria-label="Next image"
           >
             <svg width="6" height="10" viewBox="0 0 6 10" fill="none">

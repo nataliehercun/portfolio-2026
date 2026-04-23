@@ -100,7 +100,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                   className="
                     absolute top-4 right-4 z-10
                     w-8 h-8 flex items-center justify-center
-                    rounded-full bg-bg-fill-hover
+                    rounded-full bg-bg-fill hover:bg-bg-fill-hover
                     text-text-secondary hover:text-text
                     transition-colors duration-150
                   "
@@ -124,24 +124,23 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
                 <div className="p-6 sm:p-8 lg:p-10">
                   <div className="max-w-2xl">
-                    {/* Title */}
-                    <h2 className="text-heading-xl pr-10">{project.title}</h2>
+                    {/* Heading */}
+                    <h2 className="text-heading-2xl pr-10">{project.title}</h2>
 
-                    {/* Description */}
-                    <p className="mt-3 text-body-big text-text-secondary leading-relaxed">
+                    {/* Subheading */}
+                    <p className="mt-2 text-body-big text-text-secondary">
                       {project.description}
                     </p>
 
-                    {/* Metadata */}
-                    <div className="flex flex-col gap-0.5 mt-3 text-body-sm text-text-tertiary">
-                      <span>Role: {project.role}</span>
-                      <span>{project.company} {project.year}</span>
-                    </div>
+                    {/* Caption */}
+                    <p className="mt-4 text-body-sm text-text-tertiary">
+                      {project.role} | {project.company} {project.year}
+                    </p>
                   </div>
 
                   {/* Image slideshow */}
                   {project.images.length > 0 && (
-                    <div className="mt-6">
+                    <div className="mt-8">
                       <ImageSlideshow
                         images={project.images}
                         backgroundColor={project.slideshowBackground}
@@ -170,7 +169,10 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 function ContentBlock({ block }: { block: SectionContent }) {
   if (block.type === "text") {
     return (
-      <p className="mt-3 text-body-sm text-text-secondary">{block.value}</p>
+      <p
+        className="mt-3 text-body-sm text-text-secondary [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:text-text [&_a]:transition-colors [&_a]:duration-200 hover:[&_a]:text-bg-fill-brand"
+        dangerouslySetInnerHTML={{ __html: block.value }}
+      />
     );
   }
   return (
@@ -178,7 +180,7 @@ function ContentBlock({ block }: { block: SectionContent }) {
       {block.value.map((bullet, i) => (
         <li
           key={i}
-          className="text-body-sm text-text-secondary [&_a]:underline [&_a]:text-text hover:[&_a]:text-text-secondary"
+          className="text-body-sm text-text-secondary [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:text-text [&_a]:transition-colors [&_a]:duration-200 hover:[&_a]:text-bg-fill-brand"
           dangerouslySetInnerHTML={{ __html: bullet }}
         />
       ))}
@@ -197,14 +199,17 @@ function SectionBlock({ section }: { section: ProjectSection }) {
       ) : (
         <>
           {section.intro && (
-            <p className="mt-3 text-body-sm text-text-secondary">{section.intro}</p>
+            <p
+              className="mt-3 text-body-sm text-text-secondary [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:text-text [&_a]:transition-colors [&_a]:duration-200 hover:[&_a]:text-bg-fill-brand"
+              dangerouslySetInnerHTML={{ __html: section.intro }}
+            />
           )}
           {section.bullets && section.bullets.length > 0 && (
             <ul className="mt-3 flex flex-col gap-1 list-disc pl-4">
               {section.bullets.map((bullet, i) => (
                 <li
                   key={i}
-                  className="text-body-sm text-text-secondary [&_a]:underline [&_a]:text-text hover:[&_a]:text-text-secondary"
+                  className="text-body-sm text-text-secondary [&_a]:underline [&_a]:underline-offset-[3px] [&_a]:text-text [&_a]:transition-colors [&_a]:duration-200 hover:[&_a]:text-bg-fill-brand"
                   dangerouslySetInnerHTML={{ __html: bullet }}
                 />
               ))}

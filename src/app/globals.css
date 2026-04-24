@@ -25,3 +25,17 @@ body {
   color: var(--color-text);
   background: var(--color-bg);
 }
+
+.slideshow-nav .pasito-container,
+.slideshow-nav-btn {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.slideshow-stepper {
+  --pill-bg: rgba(255, 255, 255, 0.15);
+  --pill-active-bg: rgba(255, 255, 255, 0.9);
+  --pill-fill-bg: rgba(255, 255, 255, 0.3);
+  --pill-container-bg: rgba(255, 255, 255, 0.1);
+  --pill-container-border: rgba(255, 255, 255, 0.12);
+}

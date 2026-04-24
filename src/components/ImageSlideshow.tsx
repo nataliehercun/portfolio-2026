@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import { Stepper } from "pasito";
 
 const VIDEO_EXTENSIONS = [".mp4", ".webm", ".mov", ".ogg"];
 
@@ -60,26 +61,36 @@ export default function ImageSlideshow({ images, backgroundColor }: ImageSlidesh
       </AnimatePresence>
 
       {images.length > 1 && (
-        <>
+        <div className="slideshow-nav absolute left-1/2 bottom-3 -translate-x-1/2 z-10 flex items-center gap-2">
           <button
+            type="button"
             onClick={prev}
-            className="absolute left-3 top-1/2 -translate-y-1/2 w-[30px] h-[30px] pr-[2px] rounded-full bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.65)] transition-colors duration-150 flex items-center justify-center"
             aria-label="Previous image"
+            className="slideshow-nav-btn w-[30px] h-[30px] rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.12)] transition-colors duration-150"
           >
-            <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
-              <path d="M5 1L1 5L5 9" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" aria-hidden="true">
+              <path d="M5 1L1 5L5 9" stroke="rgba(255,255,255,0.9)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
+
+          <Stepper
+            className="slideshow-stepper"
+            count={images.length}
+            active={current}
+            onStepClick={setCurrent}
+          />
+
           <button
+            type="button"
             onClick={next}
-            className="absolute right-3 top-1/2 -translate-y-1/2 w-[30px] h-[30px] pl-[2px] rounded-full bg-[rgba(0,0,0,0.5)] hover:bg-[rgba(0,0,0,0.65)] transition-colors duration-150 flex items-center justify-center"
             aria-label="Next image"
+            className="slideshow-nav-btn w-[30px] h-[30px] rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.12)] transition-colors duration-150"
           >
-            <svg width="6" height="10" viewBox="0 0 6 10" fill="none">
-              <path d="M1 1L5 5L1 9" stroke="#ffffff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg width="6" height="10" viewBox="0 0 6 10" fill="none" aria-hidden="true">
+              <path d="M1 1L5 5L1 9" stroke="rgba(255,255,255,0.9)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </button>
-        </>
+        </div>
       )}
     </div>
   );

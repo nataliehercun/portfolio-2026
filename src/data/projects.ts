@@ -30,7 +30,7 @@ export const projects: Project[] = [
     title: "Shopify Email",
     icon: "◆",
     description:
-      "Designed and scaled a commerce first email marketing platform.",
+      "Designed and scaled a commerce first email marketing platform, helping merchants engage with their customers and grow their sales.",
     details:
       "A comprehensive brand identity system including logo, typography, color palette, and guidelines. The project explored the intersection of minimalism and sustainability.",
     role: "First designer on 0-1 MVP → Designer Lead",
@@ -46,27 +46,33 @@ export const projects: Project[] = [
       },
       {
         title: "Solution",
-        intro:
-          "Led design for Shopify’s native email marketing app, built from the ground up and integrated directly into Shopify Admin. Delivered an end-to-end tool that enables merchants to create, send, and measure campaigns inside Shopify.  At launch, the product included:",
-        bullets: [
-          "Brand-generated templates auto-populated with store colours, logo, and products",
-          "A flexible, Gmail-inspired WYSIWYG editor, with no rigid multi-step flow",
-          "Deep integration with store data and domain-based sending",
-          "Scheduling, basic segmentation, and built-in campaign analytics",
-          "The result: a scalable email marketing experience embedded directly within Shopify’s ecosystem.",
+        content: [
+          {
+            type: "text",
+            value:
+              "Led design for Shopify’s native email marketing app, built from the ground up and integrated directly into Shopify Admin. Delivered an end-to-end tool that enables merchants to create, send, and measure campaigns inside Shopify.  At launch, the product included:",
+          },
+          {
+            type: "bullets",
+            value: [
+              "Brand-generated templates auto-populated with store colours, logo, and products",
+              "A flexible, Gmail-inspired WYSIWYG editor, with no rigid multi-step flow",
+              "Deep integration with store data and domain-based sending",
+              "Scheduling, basic segmentation, and built-in campaign analytics",
+            ],
+          },
+          {
+            type: "text",
+            value:
+              "The result: a scalable email marketing experience embedded directly within Shopify’s ecosystem.",
+          },
         ],
-      },
-      {
-        title: "Product growth and evolution",
-        intro:
-          "After launch, I was a pillar in leading the product’s vision and growth,  scaling it into a mature platform. I onboarded & mentored 10 new UX team members over time, and consistency fostered an environnement of learning, collaboration & impact.",
       },
       {
         title: "Impact",
         bullets: [
-          " As of July 2023, there were 352k active senders across email & automations, generating 73M in GMV.",
-          " For all of 2023, those products generated $896M in GMV. We doubled sending from the beginning of the year, where we hit 568k.",
-          " We drove over $5M in revenue around that time, which was a 54% YOY growth. ",
+          "After launch, I was a pillar in leading the product’s vision and growth, scaling it into a mature platform. I onboarded & mentored 10 new UX team members over time, and consistency fostered an environnement of learning, collaboration & impact.",
+          "By the time I transitioned off the team, Shopify Email had 568K+ active senders and generated $896M in merchant GMV annually.",
           'Co-inventor on a <a href="https://patents.google.com/patent/US12106035B2/en?inventor=Natalie+Hercun" target="_blank" rel="noopener noreferrer">granted patent</a> for systems enabling dynamic generation of digital layouts and content experiences at scale.',
         ],
       },
@@ -74,10 +80,10 @@ export const projects: Project[] = [
   },
   {
     id: "ai-generated-content",
-    title: "AI generated content for email",
+    title: "AI generated email content",
     icon: "▲",
     description:
-      "Designed and launched AI generated text for email marketing, contributing to the first iteration of AI content generation at Shopify.",
+      "Launched Shopify’s first AI-generated email tools, enabling merchants to create high-performing campaigns faster. ",
     details:
       "Editorial design spanning 120 pages, balancing expressive typography with restrained white space. Each spread was designed to guide the reader through longform narratives.",
     role: "Design Lead and project champion",
@@ -107,10 +113,8 @@ export const projects: Project[] = [
         title: "Impact",
         bullets: [
           "Positive impact on open rates.",
-          "Developed a shared pattern that enabled the team to ship improvements and next versions quickly across the platform",
+          "By focusing on developping a shared component, we enabled teams to ship improvements quickly at scale, as well as developping a new recognizable pattern for users. ",
           'Contributed to the first iteration of <a href="https://www.shopify.com/ca/editions/summer2023?product=shopify-magic-featured" target="_blank" rel="noopener noreferrer">Shopify Magic</a> AI-powered features.',
-          "Our team was called out as a successful internal ollaboration case study.",
-          "Laid the foundation for how to think about AI & email, which lead to many new product launched.",
           'Co-inventor on a <a href="https://patents.google.com/patent/US20250148191A1/en?inventor=Natalie+Hercun" target="_blank" rel="noopener noreferrer">published patent application</a> for keyword extraction to generate subject lines.',
         ],
       },
@@ -167,12 +171,12 @@ export const projects: Project[] = [
   },
   {
     id: "shopify-payments-1099k",
-    title: "Shopify Payments 1099k tax filling automation",
+    title: "1099k tax filling automation",
     icon: "■",
     description:
-      "Designed an improved 1099-K filing experience by automating tax data collection and improving communication with merchants.",
+      "Simplified tax reporting by automating data collection and improving merchant communication at scale.",
     details:
-      "Designed an improved 1099-K filing experience by automating tax data collection and improving communication with merchants",
+      "Simplified tax reporting by automating data collection and improving merchant communication at scale.",
     role: "Staff Product Designer",
     year: "2025",
     company: "Shopify",
@@ -190,10 +194,8 @@ export const projects: Project[] = [
       {
         title: "Challenge",
         bullets: [
-          "Prior to this project, the 1099-K process was highly manual and error-prone for both merchants and internal teams.",
-          "Support had to contact merchants with incorrect TINs, and merchants had to download physical forms, print them, sign them, take photos, and upload them for review. Support teams then manually validated data and updated internal systems.",
-          "Transactions across multiple stores or processors were not consistently aggregated, leading to inaccurate reporting and repeated update requests.",
-          "This caused a lot of toil, causing forms to be delivered as late as March — leaving little buffer before the April IRS deadline.",
+          "The 1099-K process was highly manual and error-prone—requiring merchants to handle paperwork and support teams to manually verify and update sensitive tax information.",
+          "Reporting was fragmented and unreliable, leading to repeated corrections, heavy operational toil, and forms delivered dangerously close to the Internal Revenue Service deadline.",
         ],
       },
       {

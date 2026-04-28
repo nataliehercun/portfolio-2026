@@ -27,18 +27,18 @@ const overlayVariants = {
 const panelVariants = {
   hidden: {
     opacity: 0,
-    scale: 0.96,
+    y: "100%",
     transition: {
-      duration: 0.2,
-      ease: easeOut,
+      y: { duration: 0.3, ease: easeOut },
+      opacity: { duration: 0.25, ease: easeOut },
     },
   },
   visible: {
     opacity: 1,
-    scale: 1,
+    y: 0,
     transition: {
-      duration: 0.35,
-      ease: easeOut,
+      y: { duration: 0.55, ease: easeOut },
+      opacity: { duration: 0.3, ease: easeOut },
     },
   },
 };

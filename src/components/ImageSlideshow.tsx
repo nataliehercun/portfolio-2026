@@ -27,7 +27,7 @@ export default function ImageSlideshow({ images, backgroundColor }: ImageSlidesh
 
   return (
     <div
-      className={`relative w-full aspect-[16/10] rounded-lg overflow-hidden border border-border shadow-sm ${backgroundColor ? "" : "bg-bg-fill-hover"}`}
+      className={`relative w-full aspect-[16/10] rounded-[24px] overflow-hidden ${backgroundColor ? "" : "bg-bg-fill-hover"}`}
       style={backgroundColor ? { backgroundColor } : undefined}
     >
       <AnimatePresence>

@@ -94,7 +94,7 @@ function SheetModal({ project, onClose }: ProjectModalProps) {
           className="
             fixed bottom-0 left-0 right-0 z-50
             flex h-[97dvh] flex-col
-            rounded-t-[16px]
+            rounded-t-[24px]
             bg-bg-fill
             shadow-[0_-8px_32px_-4px_rgba(0,0,0,0.12)]
             outline-none
@@ -200,7 +200,7 @@ function DesktopModal({ project, onClose }: ProjectModalProps) {
                 onClick={(e) => e.stopPropagation()}
                 className="
                   relative w-full bg-bg-fill border border-border shadow-lg
-                  rounded-xl
+                  rounded-[24px]
                   max-w-[720px] lg:max-w-[1000px]
                 "
               >
@@ -209,7 +209,7 @@ function DesktopModal({ project, onClose }: ProjectModalProps) {
                   onClick={onClose}
                   className="
                     absolute top-4 right-4 z-10
-                    w-8 h-8 flex items-center justify-center
+                    w-12 h-12 flex items-center justify-center
                     rounded-full bg-bg-fill hover:bg-bg-fill-hover
                     text-text-secondary hover:text-text
                     transition-colors duration-150
@@ -232,7 +232,7 @@ function DesktopModal({ project, onClose }: ProjectModalProps) {
                   </svg>
                 </button>
 
-                <div className="p-6 sm:p-8 lg:p-10">
+                <div className="p-6 sm:p-8 lg:p-20">
                   <ProjectBody project={project} />
                 </div>
               </div>

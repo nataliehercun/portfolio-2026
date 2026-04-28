@@ -131,7 +131,7 @@ function SheetModal({ project, onClose }: ProjectModalProps) {
 
           {/* Scrollable content */}
           <div className="flex-1 overflow-y-auto overscroll-contain">
-            <div className="px-5 pt-3 pb-12 md:px-10 md:pt-10 md:pb-16 mx-auto w-full max-w-2xl">
+            <div className="px-5 pt-[22px] pb-12 md:px-10 md:pt-10 md:pb-16 mx-auto w-full max-w-2xl">
               {project && (
                 <>
                   <Drawer.Title className="sr-only">{project.title}</Drawer.Title>
@@ -232,7 +232,7 @@ function DesktopModal({ project, onClose }: ProjectModalProps) {
                   </svg>
                 </button>
 
-                <div className="p-6 sm:p-8 lg:p-20">
+                <div className="p-6 sm:p-8 lg:px-20 lg:py-[60px]">
                   <ProjectBody project={project} />
                 </div>
               </div>
@@ -254,7 +254,7 @@ function ProjectBody({ project }: { project: Project }) {
       <div className="max-w-2xl">
         <h2 className="text-heading-2xl pr-10">{project.title}</h2>
 
-        <p className="mt-2 text-body-big text-text-secondary">
+        <p className="mt-3 text-body-big text-text-secondary">
           {project.description}
         </p>
 

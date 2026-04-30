@@ -19,7 +19,7 @@ export interface Project {
   year: string;
   company: string;
   images: string[];
-  /** Hex background behind the modal image/video slideshow (letterboxing). */
+  /** Hex background behind the modal image/video slideshow. */
   slideshowBackground?: string;
   sections: ProjectSection[];
 }
@@ -89,7 +89,11 @@ export const projects: Project[] = [
     role: "Design Lead and project champion",
     year: "2023",
     company: "Shopify",
-    images: ["/images/Email AI/ai-1.mov", "/images/Email AI/ai-2.mov"],
+    images: [
+      "/images/Email AI/test-pm.mp4",
+      "/images/Email AI/ai-1-reframed.mp4",
+      "/images/Email AI/ai-2-reframed.mp4",
+    ],
     slideshowBackground: "#EEA380",
     sections: [
       {

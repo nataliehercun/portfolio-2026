@@ -21,11 +21,19 @@ const ASSET_RADIUS_CLASSES =
 const ASSET_SHADOW =
   "0 12px 32px -8px rgba(0,0,0,0.18), 0 4px 12px -4px rgba(0,0,0,0.12)";
 
+// Default until the first asset reports its natural dimensions. Matches the
+// width/height props passed to next/image so the reserved space is correct
+// for the common UI-screenshot ratio.
+const DEFAULT_ASPECT_RATIO = 1600 / 1000;
+
 export default function ImageSlideshow({
   images,
   backgroundColor,
 }: ImageSlideshowProps) {
   const [current, setCurrent] = useState(0);
+  // Locked to the first asset's natural ratio so the container height stays
+  // stable across slides — only the asset itself crossfades.
+  const [aspectRatio, setAspectRatio] = useState<number | null>(null);
 
   if (images.length === 0) return null;
 
@@ -33,6 +41,11 @@ export default function ImageSlideshow({
   const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
 
   const hasMultiple = images.length > 1;
+
+  const lockAspectRatio = (width: number, height: number) => {
+    if (aspectRatio !== null || !width || !height) return;
+    setAspectRatio(width / height);
+  };
 
   const navButtonClasses =
     "slideshow-nav-btn w-[30px] h-[30px] rounded-full flex items-center justify-center bg-[rgba(255,255,255,0.1)] hover:bg-[rgba(255,255,255,0.2)] border border-[rgba(255,255,255,0.12)] transition-colors duration-150";
@@ -82,38 +95,57 @@ export default function ImageSlideshow({
       }`}
       style={backgroundColor ? { backgroundColor } : undefined}
     >
-      <AnimatePresence>
-        <motion.div
-          key={current}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.3 }}
-          className="relative w-full"
-        >
-          {isVideo(images[current]) ? (
-            <video
-              src={images[current]}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className={`block w-full h-auto ${ASSET_RADIUS_CLASSES}`}
-              style={{ boxShadow: ASSET_SHADOW }}
-            />
-          ) : (
-            <Image
-              src={images[current]}
-              alt={`Slide ${current + 1} of ${images.length}`}
-              width={1600}
-              height={1000}
-              className={`block w-full h-auto ${ASSET_RADIUS_CLASSES}`}
-              style={{ boxShadow: ASSET_SHADOW }}
-              sizes="(max-width: 640px) 100vw, 760px"
-            />
-          )}
-        </motion.div>
-      </AnimatePresence>
+      {/*
+        Wrapper has a fixed aspect-ratio (locked to the first asset) so the
+        container height doesn't jump when the slide changes. Slides stack
+        absolutely so old + new overlap during the crossfade — a true dissolve,
+        not a layout shift.
+      */}
+      <div
+        className="relative w-full"
+        style={{ aspectRatio: aspectRatio ?? DEFAULT_ASPECT_RATIO }}
+      >
+        <AnimatePresence initial={false}>
+          <motion.div
+            key={current}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="absolute inset-0"
+          >
+            {isVideo(images[current]) ? (
+              <video
+                src={images[current]}
+                autoPlay
+                loop
+                muted
+                playsInline
+                onLoadedMetadata={(e) =>
+                  lockAspectRatio(
+                    e.currentTarget.videoWidth,
+                    e.currentTarget.videoHeight
+                  )
+                }
+                className={`block w-full h-full object-contain ${ASSET_RADIUS_CLASSES}`}
+                style={{ boxShadow: ASSET_SHADOW }}
+              />
+            ) : (
+              <Image
+                src={images[current]}
+                alt={`Slide ${current + 1} of ${images.length}`}
+                fill
+                onLoadingComplete={(img) =>
+                  lockAspectRatio(img.naturalWidth, img.naturalHeight)
+                }
+                className={`object-contain ${ASSET_RADIUS_CLASSES}`}
+                style={{ boxShadow: ASSET_SHADOW }}
+                sizes="(max-width: 640px) 100vw, 760px"
+              />
+            )}
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
       {/*
         Side-anchored arrows, vertically centered, no dot indicator. On lg+ the

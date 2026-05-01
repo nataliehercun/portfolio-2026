@@ -36,7 +36,7 @@ export const projects: Project[] = [
     role: "First designer on 0-1 MVP → Designer Lead",
     year: "2019-2023",
     company: "Shopify",
-    images: ["/images/Shopify Email/shopify-email.mov"],
+    images: ["/images/Shopify Email/shopify-email-final.mov"],
     slideshowBackground: "#550D00",
     sections: [
       {
@@ -90,9 +90,8 @@ export const projects: Project[] = [
     year: "2023",
     company: "Shopify",
     images: [
-      "/images/Email AI/test-pm.mp4",
-      "/images/Email AI/ai-1-reframed.mp4",
-      "/images/Email AI/ai-2-reframed.mp4",
+      "/images/Email AI/email-ai-final1.mov",
+      "/images/Email AI/email-ai-final2.mov",
     ],
     slideshowBackground: "#EEA380",
     sections: [
@@ -137,12 +136,12 @@ export const projects: Project[] = [
     company: "Shopify",
     slideshowBackground: "#094F4D",
     images: [
-      "/images/automations/automations-new/automations-home.png",
-      "/images/automations/automations-new/automations-template.png",
-      "/images/automations/automations-new/automations-flow.png",
-      "/images/automations/automations-new/automations-email.png",
-      "/images/automations/automations-new/automations-editor.png",
-      "/images/automations/automations-new/automatioms-report.png",
+      "/images/Automations/automations-final/automations-marketing-home.png",
+      "/images/Automations/automations-final/automations-template-picker.png",
+      "/images/Automations/automations-final/automations-flow.png",
+      "/images/Automations/automations-final/automations-email-card.png",
+      "/images/Automations/automations-final/automations-editor.png",
+      "/images/Automations/automations-final/automations-report.png",
     ],
     sections: [
       {
@@ -184,7 +183,7 @@ export const projects: Project[] = [
     role: "Staff Product Designer",
     year: "2025",
     company: "Shopify",
-    images: ["/images/payments/Payments.mov"],
+    images: ["/images/Payments/1099k-final.mov"],
     slideshowBackground: "#CEEAF5",
     sections: [
       {

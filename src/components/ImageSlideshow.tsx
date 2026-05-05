@@ -31,6 +31,7 @@ export default function ImageSlideshow({
   backgroundColor,
 }: ImageSlideshowProps) {
   const [current, setCurrent] = useState(0);
+  const [loadedBySrc, setLoadedBySrc] = useState<Record<string, boolean>>({});
   // Locked to the first asset's natural ratio so the container height stays
   // stable across slides — only the asset itself crossfades.
   const [aspectRatio, setAspectRatio] = useState<number | null>(null);
@@ -41,10 +42,16 @@ export default function ImageSlideshow({
   const prev = () => setCurrent((c) => (c - 1 + images.length) % images.length);
 
   const hasMultiple = images.length > 1;
+  const currentSrc = images[current];
+  const currentIsLoaded = !!loadedBySrc[currentSrc];
 
   const lockAspectRatio = (width: number, height: number) => {
     if (aspectRatio !== null || !width || !height) return;
     setAspectRatio(width / height);
+  };
+
+  const markAssetLoaded = (src: string) => {
+    setLoadedBySrc((prev) => (prev[src] ? prev : { ...prev, [src]: true }));
   };
 
   const navButtonClasses =
@@ -114,34 +121,48 @@ export default function ImageSlideshow({
             transition={{ duration: 0.25, ease: "easeOut" }}
             className="absolute inset-0"
           >
-            {isVideo(images[current]) ? (
-              <video
-                src={images[current]}
-                autoPlay
-                loop
-                muted
-                playsInline
-                onLoadedMetadata={(e) =>
-                  lockAspectRatio(
-                    e.currentTarget.videoWidth,
-                    e.currentTarget.videoHeight
-                  )
-                }
-                className={`block w-full h-full object-contain ${ASSET_RADIUS_CLASSES}`}
-                style={{ boxShadow: ASSET_SHADOW }}
-              />
+            {isVideo(currentSrc) ? (
+              <div
+                className={`h-full w-full ${ASSET_RADIUS_CLASSES}`}
+                style={{ boxShadow: currentIsLoaded ? ASSET_SHADOW : undefined }}
+              >
+                <video
+                  src={currentSrc}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  onLoadedMetadata={(e) =>
+                    lockAspectRatio(
+                      e.currentTarget.videoWidth,
+                      e.currentTarget.videoHeight
+                    )
+                  }
+                  onLoadedData={() => markAssetLoaded(currentSrc)}
+                  className={`block w-full h-full object-contain transition-opacity duration-150 ${ASSET_RADIUS_CLASSES} ${
+                    currentIsLoaded ? "opacity-100" : "opacity-0"
+                  }`}
+                />
+              </div>
             ) : (
-              <Image
-                src={images[current]}
-                alt={`Slide ${current + 1} of ${images.length}`}
-                fill
-                onLoadingComplete={(img) =>
-                  lockAspectRatio(img.naturalWidth, img.naturalHeight)
-                }
-                className={`object-contain ${ASSET_RADIUS_CLASSES}`}
-                style={{ boxShadow: ASSET_SHADOW }}
-                sizes="(max-width: 640px) 100vw, 760px"
-              />
+              <div
+                className={`h-full w-full ${ASSET_RADIUS_CLASSES}`}
+                style={{ boxShadow: currentIsLoaded ? ASSET_SHADOW : undefined }}
+              >
+                <Image
+                  src={currentSrc}
+                  alt={`Slide ${current + 1} of ${images.length}`}
+                  fill
+                  onLoad={() => markAssetLoaded(currentSrc)}
+                  onLoadingComplete={(img) =>
+                    lockAspectRatio(img.naturalWidth, img.naturalHeight)
+                  }
+                  className={`object-contain transition-opacity duration-150 ${ASSET_RADIUS_CLASSES} ${
+                    currentIsLoaded ? "opacity-100" : "opacity-0"
+                  }`}
+                  sizes="(max-width: 640px) 100vw, 760px"
+                />
+              </div>
             )}
           </motion.div>
         </AnimatePresence>

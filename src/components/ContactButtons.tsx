@@ -118,15 +118,16 @@ export default function ContactButtons() {
       >
         Linkedin&nbsp;↗
       </motion.a>
-      <motion.button
-        type="button"
+      <motion.a
+        href="/NatalieHercun-resume-2026.pdf"
+        download
         className={buttonClass}
         whileHover={{ scale: 0.95 }}
         whileTap={{ scale: 0.92 }}
         transition={bounceTransition}
       >
         CV&nbsp;↗
-      </motion.button>
+      </motion.a>
     </motion.div>
   );
 }
